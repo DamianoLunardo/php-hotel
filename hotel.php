@@ -47,7 +47,7 @@
     }
     //var_dump($hotels);
     foreach ($hotels as $key => $hotel) {
-        $hotels[$key]['pool'] = (rand(0, 1) == 1) ? 'Si' : 'No';
+        $hotels[$key]['pool'] = (rand(0, 1)) ? 'Si' : 'No';
     }
     //var_dump($hotels);
     $hotels[0]['gym'] = 'Si';
@@ -110,7 +110,7 @@
             </thead>
             <tbody>
                 <?php foreach ($hotels as $hotel) {
-                    if (!isset($_GET['parcheggio']) || $_GET['parcheggio'] == '' || $hotel['parking'] == $_GET['parcheggio']) { ?>
+                    if ( $_GET['parcheggio'] == '' || $hotel['parking'] == $_GET['parcheggio']) { ?>
                     <tr>
                         <td><?php echo $hotel['name']; ?></td>
                         <td><?php echo $hotel['description']; ?></td>
